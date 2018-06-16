@@ -8,6 +8,17 @@ class Show
     @type = options['type']
   end
 
-
+  def save()
+    sql = "INSERT INTO shows (
+    name, type
+    )
+    VALUES (
+      $1, $2
+      )
+    RETURNING *"
+    values = [@name, @type]
+    show_data = SqlRunner.run(sql, values)
+    @id = show_data.first['id'].to_i()
+  end
 
 end
