@@ -2,6 +2,8 @@ require('pry')
 require_relative('../models/show.rb')
 require_relative('../models/performance.rb')
 
+Show.delete_all()
+
 show1 = Show.new({
   "name" => "Macbeth",
   "type" => "Play"
