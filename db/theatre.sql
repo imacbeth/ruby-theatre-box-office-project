@@ -9,7 +9,7 @@ type VARCHAR(255)
 
 CREATE TABLE performance (
 id SERIAL4,
-show_id VARCHAR(255),
+show_id INT4 REFERENCES show(id),
 start_time VARCHAR(255),
 available_seats INT2
 );
