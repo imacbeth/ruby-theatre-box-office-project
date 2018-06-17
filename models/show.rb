@@ -11,7 +11,8 @@ class Show
   end
 
   def save()
-    sql = "INSERT INTO shows (
+    sql = "INSERT INTO shows
+    (
     name, type
     )
     VALUES (
@@ -19,8 +20,8 @@ class Show
       )
     RETURNING *"
     values = [@name, @type]
-    show_data = SqlRunner.run(sql, values)
-    @id = show_data.first['id'].to_i()
+    result = SqlRunner.run(sql, values)
+    @id = result.first['id'].to_i()
   end
 
   def self.delete_all()
@@ -39,5 +40,6 @@ class Show
     values = [id]
     SqlRunner.run(sql, values)
   end
+
 
 end

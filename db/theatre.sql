@@ -11,5 +11,5 @@ CREATE TABLE performances (
 id SERIAL4 PRIMARY KEY,
 show_id INT4 REFERENCES shows(id),
 start_time VARCHAR(255),
-available_seats INT2
+seating_capacity INT2
 );
