@@ -52,7 +52,9 @@ class Show
   def self.find(id)
     sql = "SELECT * FROM shows WHERE id = $1"
     values = [id]
-    SqlRunner.run(sql, values)
+    result = SqlRunner.run(sql, values)
+    show = Show.new(result.first)
+    return show
   end
 
 

@@ -1,0 +1,18 @@
+<form action="/shows/ <%= @show.id %>" method="post">
+  <label for="show-title">Title:</label>
+  <input type="text" name="name" value="<%= @show.name %>">
+
+  <label for="show-type-select">Select a show type:</label>
+    <select name="type" id= "show-type-selection">
+      <option value="Play" <%= "selected" if @show.type == "Play"%>
+      >Play</option>
+      <option value="Musical" <%= "selected" if @show.type == "Musical"%>
+      >Musical</option>
+      <option value="Dance" <%= "selected" if @show.type == "Dance"%>
+      >Dance</option>
+      <option value="Comedy" <%= "selected" if @show.type == "Comedy"%>
+      >Comedy</option>
+    </select>
+
+  <input type='submit' value="Edit Show">
+</form>

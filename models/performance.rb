@@ -55,7 +55,7 @@ class Performance
     )
     WHERE id = $4"
     values = [@show_id, @start_time, @seating_capacity, @id]
-    SqlRunner.run(sql,values)
+    SqlRunner.run(sql, values)
   end
 
 end

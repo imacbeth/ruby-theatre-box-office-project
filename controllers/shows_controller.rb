@@ -16,7 +16,7 @@ end
 
 #SHOW
 get '/shows/:id' do
-  @show = Show.find(params['id'])
+  @show = Show.find(params[:id].to_i)
   erb(:"shows/show")
 end
 
@@ -29,6 +29,12 @@ end
 
 #EDIT
 get '/shows/:id/edit' do
-  @show = Show.find(params['id'])
-  erb(:edit)
+  @show = Show.find(params[:id].to_i)
+  erb(:"shows/edit")
+end
+
+#UPDATE
+post '/shows/:id' do
+  Show.new(params).update()
+  redirect to '/shows'
 end
