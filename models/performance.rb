@@ -37,6 +37,14 @@ class Performance
     return performance_data.map { |performance| Performance.new(performance) }
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM performances WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    performance = Performance.new(result.first)
+    return performance
+  end
+
   def delete(id)
     sql = "DELETE FROM performances WHERE id = $1"
     values = [id]

@@ -45,3 +45,7 @@ post '/shows/:id/delete' do
   show.delete
   redirect to '/shows'
 end
+
+get '/shows/:id/performances' do
+  erb(:"shows/performances")
+end

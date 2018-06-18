@@ -1,8 +1,16 @@
 <h2>Shows</h2>
 
-<% @shows.each do |show| %>
-  <p>Title: <%= show.name %> </p>
-  <p>Type: <%= show.type %> </p>
-  <p><a href="/shows/<%= show.id %>">View Show</a></p>
-  <hr />
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Type</th>
+    <th>More details</th>
+  </tr>
+  <% @shows.each do |show| %>
+  <tr>
+    <td><%= show.name %></td>
+    <td> <%= show.type %> </td>
+    <td><a href="/shows/<%= show.id %>">View Show</a></td>
+  </tr>
 <% end %>
+</table>

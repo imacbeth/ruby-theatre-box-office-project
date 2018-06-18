@@ -57,5 +57,11 @@ class Show
     return show
   end
 
+  def performance()
+    sql = "SELECT * FROM performances WHERE show_id = $1"
+    values = [@id]
+    performances = SqlRunner.run(sql, values)
+    return performances.map { |performance_hash| Performance.new(performance_hash) }
+  end
 
 end

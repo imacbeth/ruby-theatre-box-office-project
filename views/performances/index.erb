@@ -1,9 +1,19 @@
 <h2>Performances</h2>
 
-<% @performances.each do |performance| %>
-  <p>Show: <%= performance.show.name %> </p>
-  <p>Start time: <%= performance.start_time %> </p>
-  <p>Seating capacity: <%= performance.seating_capacity %> </p>
-  <p><a href="/performances/ <%= performance.id %>">View Performance</a></p>
-  <hr />
-<% end %>
+<table style="width:100%">
+  <tr>
+    <th>Show</th>
+    <th>Start time</th>
+    <th>Seating capacity</th>
+  </tr>
+  <% @performances.each do |performance| %>
+  <tr>
+    <td><%= performance.show.name %></td>
+    <td><%= performance.start_time %></td>
+    <td><%= performance.seating_capacity %></td>
+    <td><a href="/performances/<%= performance.id %>">View Performance</a></td>
+  </tr>
+
+  <% end %>
+
+</table>
