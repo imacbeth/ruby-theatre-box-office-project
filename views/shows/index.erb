@@ -3,6 +3,7 @@
 <% @shows.each do |show| %>
   <p>Title: <%= show.name %> </p>
   <p>Type: <%= show.type %> </p>
-  <p><a href="/shows/ <%= show.id %> ">View Show</a></p>
+  <p><a href="/shows/ <%= show.id %>">View Show</a></p>
+  <p><a href="/shows/ <%= show.id %>/edit">Edit Show</a></p>
   <hr />
 <% end %>

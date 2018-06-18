@@ -41,5 +41,19 @@ class Show
     SqlRunner.run(sql, values)
   end
 
+  def update()
+    sql = "UPDATE shows
+    SET (name, type) = ($1, $2)
+    WHERE id = $3"
+    values = [@name, @type, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM shows WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
 
 end
