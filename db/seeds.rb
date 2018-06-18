@@ -19,7 +19,7 @@ show3 = Show.new({
   })
 show4 = Show.new({
   "name" => "Swan Lake",
-  "type" => "Ballet"
+  "type" => "Dance"
   })
 
 show1.save()

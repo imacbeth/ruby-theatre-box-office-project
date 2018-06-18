@@ -4,8 +4,12 @@ require_relative('../models/show.rb')
 also_reload('../models/*')
 
 #INDEX
-
 get '/shows' do
   @shows = Show.all()
   erb(:"shows/index")
+end
+
+#NEW
+get '/shows/new' do
+  erb(:"shows/new")
 end
