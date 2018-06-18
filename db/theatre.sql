@@ -1,3 +1,4 @@
+DROP TABLE tickets;
 DROP TABLE performances;
 DROP TABLE shows;
 
@@ -12,4 +13,10 @@ id SERIAL4 PRIMARY KEY,
 show_id INT4 REFERENCES shows(id) ON DELETE CASCADE,
 start_time TIMESTAMP,
 seating_capacity INT2
+);
+
+CREATE TABLE tickets (
+id SERIAL4 PRIMARY KEY,
+performance_id INT4 REFERENCES performances(id) ON DELETE CASCADE,
+price INT2
 );

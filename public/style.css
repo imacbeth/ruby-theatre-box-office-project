@@ -1,0 +1,13 @@
+ul {
+  list-style-type: none;
+  justify-content: space-around;
+  align-content: center;
+  display: flex;
+  font-family:  'Domine', serif;
+  color: #FC3C3C;
+}
+
+a {
+  text-decoration: none;
+  color: #FC3C3C;
+}
