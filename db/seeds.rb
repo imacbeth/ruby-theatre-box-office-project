@@ -29,25 +29,25 @@ show4.save()
 
 performance1 = Performance.new({
   "show_id" => show1.id,
-  "start_time" => "19:00",
+  "start_time" => "2018-08-02 19:00",
   "seating_capacity" => 80
   })
 
 performance2 = Performance.new({
   "show_id" => show2.id,
-  "start_time" => "19:30",
+  "start_time" => "2018-08-03 19:30:00",
   "seating_capacity" => 100
   })
 
 performance3 = Performance.new({
   "show_id" => show3.id,
-  "start_time" => "19:30",
+  "start_time" => "2018-08-04 19:30:00",
   "seating_capacity" => 200
   })
 
 performance4 = Performance.new({
   "show_id" => show4.id,
-  "start_time" => "15:30",
+  "start_time" => "2018-08-05 15:30:00",
   "seating_capacity" => 250
   })
 

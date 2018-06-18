@@ -4,10 +4,10 @@ class Performance
   attr_reader :id, :show_id, :start_time, :seating_capacity
 
   def initialize(options)
-    @id = options['id']
-    @show_id = options['show_id']
+    @id = options['id'].to_i if options ['id']
+    @show_id = options['show_id'].to_i
     @start_time = options['start_time']
-    @seating_capacity = options['seating_capacity']
+    @seating_capacity = options['seating_capacity'].to_i
   end
 
   def save()
@@ -56,6 +56,13 @@ class Performance
     WHERE id = $4"
     values = [@show_id, @start_time, @seating_capacity, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def show()
+    sql = "SELECT * FROM shows WHERE id = $1"
+    values = [@show_id]
+    results = SqlRunner.run(sql, values)
+    return Show.new(results.first)
   end
 
 end

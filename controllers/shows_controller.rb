@@ -38,3 +38,10 @@ post '/shows/:id' do
   Show.new(params).update()
   redirect to '/shows'
 end
+
+#DELETE
+post '/shows/:id/delete' do
+  show = Show.find(params[:id])
+  show.delete
+  redirect to '/shows'
+end
