@@ -81,11 +81,11 @@ class Performance
     return Ticket.map_items(results).count
   end
 
-  def sell_ticket()
-    @empty_seats -= 1
-
+  def sell_tickets(quantity)
+    @empty_seats -= quantity
+    update()
   end
-
+  #
   # def sold_tickets()
   #   sql = "SELECT COUNT (*) FROM tickets WHERE performance_id = $1"
   #   values = [@id]

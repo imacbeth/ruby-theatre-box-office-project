@@ -58,71 +58,71 @@ performance2.save()
 performance3.save()
 performance4.save()
 
-customer1 = Customer.new({
-  "name" => "Alice",
-  "wallet" => "50",
-  "email" => "alice@gmail.com"
-  })
-
-customer2 = Customer.new({
-  "name" => "Jerry",
-  "wallet" => "65",
-  "email" => "jerry@gmail.com"
-  })
-
-customer3 = Customer.new({
-  "name" => "Iona",
-  "wallet" => "60",
-  "email" => "iona@gmail.com"
-  })
-customer4 = Customer.new({
-  "name" => "Callum",
-  "wallet" => "50",
-  "email" => "callum@gmail.com"
-  })
-
-customer5 = Customer.new({
-  "name" => "Julia",
-  "wallet" => "60",
-  "email" => "julia@gmail.com"
-  })
-
-customer1.save()
-customer2.save()
-customer3.save()
-customer4.save()
-customer5.save()
-
-ticket1 = Ticket.new({
-  "performance_id" => performance1.id,
-  "customer_id" => customer1.id,
-  "price" => 20
-})
-ticket2 = Ticket.new({
-  "performance_id" => performance1.id,
-  "customer_id" => customer2.id,
-  "price" => 20
-})
-ticket3 = Ticket.new({
-  "performance_id" => performance3.id,
-  "customer_id" => customer3.id,
-  "price" => 25
-})
-ticket4 = Ticket.new({
-  "performance_id" => performance3.id,
-  "customer_id" => customer4.id,
-  "price" => 25
-})
-ticket5 = Ticket.new({
-  "performance_id" => performance4.id,
-  "customer_id" => customer5.id,
-  "price" => 25
-})
-ticket1.save()
-ticket2.save()
-ticket3.save()
-ticket4.save()
-ticket5.save()
+# customer1 = Customer.new({
+#   "name" => "Alice",
+#   "wallet" => "50",
+#   "email" => "alice@gmail.com"
+#   })
+#
+# customer2 = Customer.new({
+#   "name" => "Jerry",
+#   "wallet" => "65",
+#   "email" => "jerry@gmail.com"
+#   })
+#
+# customer3 = Customer.new({
+#   "name" => "Iona",
+#   "wallet" => "60",
+#   "email" => "iona@gmail.com"
+#   })
+# customer4 = Customer.new({
+#   "name" => "Callum",
+#   "wallet" => "50",
+#   "email" => "callum@gmail.com"
+#   })
+#
+# customer5 = Customer.new({
+#   "name" => "Julia",
+#   "wallet" => "60",
+#   "email" => "julia@gmail.com"
+#   })
+#
+# customer1.save()
+# customer2.save()
+# customer3.save()
+# customer4.save()
+# customer5.save()
+#
+# ticket1 = Ticket.new({
+#   "performance_id" => performance1.id,
+#   "customer_id" => customer1.id,
+#   "price" => 20
+# })
+# ticket2 = Ticket.new({
+#   "performance_id" => performance1.id,
+#   "customer_id" => customer2.id,
+#   "price" => 20
+# })
+# ticket3 = Ticket.new({
+#   "performance_id" => performance3.id,
+#   "customer_id" => customer3.id,
+#   "price" => 25
+# })
+# ticket4 = Ticket.new({
+#   "performance_id" => performance3.id,
+#   "customer_id" => customer4.id,
+#   "price" => 25
+# })
+# ticket5 = Ticket.new({
+#   "performance_id" => performance4.id,
+#   "customer_id" => customer5.id,
+#   "price" => 25
+# })
+# ticket1.save()
+# ticket2.save()
+# ticket3.save()
+# ticket4.save()
+# ticket5.save()
 
 binding.pry
 nil

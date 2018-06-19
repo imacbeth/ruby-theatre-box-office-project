@@ -29,6 +29,12 @@ post '/performances' do
   erb(:"performances/create")
 end
 
+#UPDATE
+post '/performances/:id' do
+  Performance.new(params).update()
+  redirect to '/performances'
+end
+
 #EDIT
 get '/performances/:id/edit' do
   @performance = Performance.find(params[:id].to_i)
@@ -36,15 +42,16 @@ get '/performances/:id/edit' do
   erb(:"performances/edit")
 end
 
-#UPDATE
-post '/performances/:id' do
-  Performance.new(params).update()
-  redirect to '/performances'
-end
-
 #DELETE
 post '/performances/:id/delete' do
   performance = Performance.find(params[:id])
   performance.delete
+  redirect to '/performances'
+end
+
+#sell
+post '/performances/:id/sell' do
+  performance = Performance.find(params[:id].to_i)
+  performance.sell_tickets(params[:quantity].to_i)
   redirect to '/performances'
 end
