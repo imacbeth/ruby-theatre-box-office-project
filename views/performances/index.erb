@@ -6,6 +6,7 @@
     <th>Start time</th>
     <th>Empty Seats</th>
     <th>Availability level</th>
+    <th> </th>
     <th>More details</th>
   </tr>
   <% @performances.each do |performance| %>
@@ -13,10 +14,9 @@
     <td><%= performance.show.name %></td>
     <td><%= performance.start_time %></td>
     <td><%= performance.empty_seats %></td>
-    <td><%= performance.tickets() %></td>
-    <td><%= performance.check_availability() %></td>
+    <td class = "<%= performance.check_availability %>"> <%= performance.check_availability() %></td>
     <td><form  action="performances/<%=performance.id%>/sell" method="post">
-    <label for="quantity-field">Enter number of tickets sold</label>
+    <label for="quantity-field"></label>
     <input type="number" name="quantity" min = "0" max = "20"><input type="submit" value="Update sold tickets">
     </form> </td>
     <td><a href="/performances/<%= performance.id %>">More options</a></td>

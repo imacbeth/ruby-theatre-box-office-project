@@ -1,13 +1,14 @@
+html { }
 
 header {
   text-align: center;
+  font-family: 'Lora', serif;
 }
 ul {
   list-style-type: none;
   justify-content: space-around;
   align-content: center;
   display: flex;
-  font-family:  'Domine', serif;
   color: #FC3C3C;
 }
 
@@ -17,5 +18,25 @@ a {
 }
 
 th {
+  padding: 1vh;
   text-align: left;
+}
+td {
+  padding: 1vh;
+  text-align: left;
+}
+
+table {
+  align-content: left;
+  display: flex;
+}
+
+
+.Sold-out { background-color: #2dc937;
+}
+.Low-availability { background-color:	#99c140;
+}
+.Medium-availability { background-color: #db7b2b;
+}
+.High-availability { background-color: #cc3232;
 }

@@ -94,12 +94,14 @@ class Performance
   # end
   #
   def check_availability()
-    if tickets() < @empty_seats / 2
-      return "High availability"
-    elsif tickets() > @empty_seats / 2
-      return "Medium availability"
-    elsif tickets() == @empty_seats
-      return "Sold out"
+    if @empty_seats > 70
+      return "High-availability"
+    elsif @empty_seats > 30
+      return "Medium-availability"
+    elsif @empty_seats  >= 1
+        return "Low-availability"
+    elsif  @empty_seats == 0
+      return "Sold-out"
     end
   end
 
