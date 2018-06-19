@@ -1,6 +1,6 @@
 <h4> <%= @performance.show.name %></h4>
 <p><%= @performance.start_time %></p>
-<p><%= @performance.seating_capacity %></p>
+<p><%= @performance.empty_seats %></p>
 
 <p><a href="/performances/<%= @performance.id %>/edit">Edit performance</a></p>
 <form method="post" action="/performances/<%= @performance.id %>/delete">

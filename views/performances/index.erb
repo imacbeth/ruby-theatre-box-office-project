@@ -4,14 +4,18 @@
   <tr>
     <th>Show</th>
     <th>Start time</th>
-    <th>Seating capacity</th>
+    <th>Empty Seats</th>
+    <th>Number of tickets sold</th>
+    <th>Availability level</th>
     <th>More details</th>
   </tr>
   <% @performances.each do |performance| %>
   <tr>
     <td><%= performance.show.name %></td>
     <td><%= performance.start_time %></td>
-    <td><%= performance.seating_capacity %></td>
+    <td><%= performance.empty_seats %></td>
+    <td><%= performance.tickets() %></td>
+    <td><%= performance.check_availability() %></td>
     <td><a href="/performances/<%= performance.id %>">View Performance</a></td>
   </tr>
 

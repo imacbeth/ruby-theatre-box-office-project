@@ -32,6 +32,7 @@ end
 #EDIT
 get '/performances/:id/edit' do
   @performance = Performance.find(params[:id].to_i)
+  @shows = Show.all
   erb(:"performances/edit")
 end
 

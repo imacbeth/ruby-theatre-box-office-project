@@ -19,9 +19,9 @@
 <tr><% for performance in @performances %></tr>
 <tr>
 <td><%= performance.start_time %></td>
-<td><%= performance.seating_capacity %></td>
-<td><%=  %></td>
-<td><%=  %></td>
+<td><%= performance.empty_seats %></td>
+<td><%= performance.tickets() %></td>
+<td><%= performance.check_availability() %></td>
 </tr>
 <% end  %>
 </table>

@@ -1,13 +1,14 @@
 require_relative('../db/sql_runner.rb')
 
+
 class Performance
-  attr_reader :id, :show_id, :start_time, :seating_capacity
+  attr_reader :id, :show_id, :start_time, :empty_seats
 
   def initialize(options)
     @id = options['id'].to_i if options ['id']
     @show_id = options['show_id'].to_i
     @start_time = options['start_time']
-    @seating_capacity = options['seating_capacity'].to_i
+    @empty_seats = options['empty_seats'].to_i
   end
 
   def save()
@@ -15,13 +16,13 @@ class Performance
     (
     show_id,
     start_time,
-    seating_capacity
+    empty_seats
     )
     VALUES (
     $1, $2, $3
     )
     RETURNING *"
-    values = [@show_id, @start_time, @seating_capacity]
+    values = [@show_id, @start_time, @empty_seats]
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
   end
@@ -56,13 +57,13 @@ class Performance
     SET
     (show_id,
     start_time,
-    seating_capacity
+    empty_seats
     ) =
     (
       $1, $2, $3
     )
     WHERE id = $4"
-    values = [@show_id, @start_time, @seating_capacity, @id]
+    values = [@show_id, @start_time, @empty_seats, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -80,6 +81,11 @@ class Performance
     return Ticket.map_items(results).count
   end
 
+  def sell_ticket()
+    @empty_seats -= 1
+
+  end
+
   # def sold_tickets()
   #   sql = "SELECT COUNT (*) FROM tickets WHERE performance_id = $1"
   #   values = [@id]
@@ -87,15 +93,15 @@ class Performance
   #   return Ticket.map_items(results)
   # end
   #
-  # def check_availability()
-  #   if tickets() > @seating_capacity/2
-  #     return "High availability"
-  #   elsif tickets() > @seating_capacity/5
-  #     return "Medium availability"
-  #   elsif tickets() == @seating_capacity
-  #     return "Sold out"
-  #   end
-  # end
+  def check_availability()
+    if tickets() < @empty_seats / 2
+      return "High availability"
+    elsif tickets() > @empty_seats / 2
+      return "Medium availability"
+    elsif tickets() == @empty_seats
+      return "Sold out"
+    end
+  end
 
   def self.map_items(performance_data)
     result = performance_data.map { |performance| Performance.new( performance ) }

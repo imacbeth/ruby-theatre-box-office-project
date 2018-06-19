@@ -13,7 +13,7 @@ CREATE TABLE performances (
 id SERIAL4 PRIMARY KEY,
 show_id INT4 REFERENCES shows(id) ON DELETE CASCADE,
 start_time TIMESTAMP,
-seating_capacity INT2
+empty_seats INT2
 );
 
 CREATE TABLE customers (

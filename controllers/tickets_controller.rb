@@ -1,4 +1,5 @@
 require("sinatra")
 require("sinatra/contrib/all")
 require_relative('../models/performance.rb')
+require_relative('../models/ticket.rb')
 also_reload('../models/*')

@@ -80,8 +80,6 @@ class Ticket
     return Customer.map_items(customer_data)
   end
 
-  
-
   def self.map_items(ticket_data)
     result = ticket_data.map { |ticket| Ticket.new( ticket ) }
     return result

@@ -66,9 +66,11 @@ class Customer
       SqlRunner.run(sql, values)
     end
 
-  # def buy_a_ticket()
-  #
-  # end
+  def buy_a_ticket(ticket)
+    performance = ticket.performance
+    price = ticket.price
+    return if performance.check_availability == "Sold out"
+  end
 
   def self.map_items(customer_data)
     result = customer_data.map { |customer| Customer.new( customer ) }
