@@ -17,6 +17,7 @@ end
 #SHOW
 get '/shows/:id' do
   @show = Show.find(params[:id].to_i)
+  @performances = @show.performances()
   erb(:"shows/show")
 end
 
@@ -44,8 +45,4 @@ post '/shows/:id/delete' do
   show = Show.find(params[:id])
   show.delete
   redirect to '/shows'
-end
-
-get '/shows/:id/performances' do
-  erb(:"shows/performances")
 end

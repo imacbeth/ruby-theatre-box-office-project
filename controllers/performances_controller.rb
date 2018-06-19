@@ -12,6 +12,7 @@ end
 
 #NEW
 get '/performances/new' do
+  @shows = Show.all()
   erb(:"performances/new")
 end
 

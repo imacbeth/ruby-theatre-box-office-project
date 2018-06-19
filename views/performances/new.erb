@@ -4,24 +4,20 @@
 
   <div class="form-wrapper">
 
-    <div class="form-line">
-      <label for="show-selection">Select a show:</label>
-      <select name="show-selection" id="show-selection">
-        <% @shows.each do |show|  %>
-          <option value=<%=show.id %> ><%= show.name %></option>
-          <% end %>
+    <label for="show-selection">Select a show:</label>
+      <select name="show_id" id="show-selection">
+        <% @shows.each do |show| %>
+          <option value=<%= show.id %>><%= show.name %></option>
+        <% end %>
       </select>
-    </div>
 
-    <div class="form-line">
     <label for="start_time">Please enter a date and start time:</label>
       <input type="datetime-local" name="start_time" id="start_time"/>
-      <label for="seating_capacity">Please enter the maximum seating capacity for the venue</label>
-    </div>
 
-    <div class="form-line">
+    <label for="seating_capacity">Please enter the maximum seating capacity for the venue</label>
+      <input type="number" name="seating_capacity">
+
     <input type="submit" value="Create new performance">
-    </div>
 
   </div>
 </form>

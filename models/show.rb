@@ -57,7 +57,7 @@ class Show
     return show
   end
 
-  def performance()
+  def performances()
     sql = "SELECT * FROM performances WHERE show_id = $1"
     values = [@id]
     performances = SqlRunner.run(sql, values)

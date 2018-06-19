@@ -1,3 +1,7 @@
+
+header {
+  text-align: center;
+}
 ul {
   list-style-type: none;
   justify-content: space-around;
@@ -10,4 +14,8 @@ ul {
 a {
   text-decoration: none;
   color: #FC3C3C;
+}
+
+th {
+  text-align: left;
 }

@@ -73,4 +73,33 @@ class Performance
     return Show.new(results.first)
   end
 
+  def tickets()
+    sql = "SELECT * FROM tickets WHERE performance_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql,values)
+    return Ticket.map_items(results).count
+  end
+
+  # def sold_tickets()
+  #   sql = "SELECT COUNT (*) FROM tickets WHERE performance_id = $1"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql,values)
+  #   return Ticket.map_items(results)
+  # end
+  #
+  # def check_availability()
+  #   if tickets() > @seating_capacity/2
+  #     return "High availability"
+  #   elsif tickets() > @seating_capacity/5
+  #     return "Medium availability"
+  #   elsif tickets() == @seating_capacity
+  #     return "Sold out"
+  #   end
+  # end
+
+  def self.map_items(performance_data)
+    result = performance_data.map { |performance| Performance.new( performance ) }
+    return result
+  end
+
 end

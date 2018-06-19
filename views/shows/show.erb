@@ -1,8 +1,27 @@
-<h4> <%= @show.name %></h4>
-<p><%= @show.type %></p>
+<table>
+<tr>
+  <td><b><%= @show.name %></td>
+  <td><%= @show.type %></td>
+  <td><a href="/shows/<%= @show.id %>/edit">Edit show</a></td>
+  <td><form method="post" action="/shows/<%= @show.id %>/delete">
+    <input type="submit" value="Delete Show"/>
+  </form></td>
+</tr>
 
-<p><a href="/shows/<%= @show.id %>/edit">Edit show</a></p>
-<p><a href="/shows/<%= @show.id %>/performances"> Display all performances</a></p>
-<form method="post" action="/shows/<%= @show.id %>/delete">
-  <input type="submit" value="Delete Show"/>
-</form>
+<br>
+</table>
+
+<table>
+<th>Time and date</th>
+<th>Number of seats</th>
+<th> Tickets sold</th>
+<th> Availability level</th>
+<tr><% for performance in @performances %></tr>
+<tr>
+<td><%= performance.start_time %></td>
+<td><%= performance.seating_capacity %></td>
+<td><%=  %></td>
+<td><%=  %></td>
+</tr>
+<% end  %>
+</table>
