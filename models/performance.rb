@@ -3,13 +3,14 @@ require('date')
 require('time')
 
 class Performance
-  attr_reader :id, :show_id, :start_time, :empty_seats
+  attr_reader :id, :show_id, :start_time, :empty_seats, :price
 
   def initialize(options)
     @id = options['id'].to_i if options ['id']
     @show_id = options['show_id'].to_i
     @start_time = options['start_time']
     @empty_seats = options['empty_seats'].to_i
+    @price = options['price'].to_i
   end
 
   def save()
@@ -17,13 +18,14 @@ class Performance
     (
     show_id,
     start_time,
-    empty_seats
+    empty_seats,
+    price
     )
     VALUES (
-    $1, $2, $3
+    $1, $2, $3, $4
     )
     RETURNING *"
-    values = [@show_id, @start_time, @empty_seats]
+    values = [@show_id, @start_time, @empty_seats, @price]
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
 
@@ -59,13 +61,14 @@ class Performance
     SET
     (show_id,
     start_time,
-    empty_seats
+    empty_seats,
+    price
     ) =
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
-    WHERE id = $4"
-    values = [@show_id, @start_time, @empty_seats, @id]
+    WHERE id = $5"
+    values = [@show_id, @start_time, @empty_seats, @price, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -83,16 +86,30 @@ class Performance
     return Ticket.map_items(results).count
   end
 
+  # def sell_tickets(quantity)
+  #   @empty_seats -= quantity
+  #   update()
+  # end
+
   def sell_tickets(quantity)
     @empty_seats -= quantity
     update()
+    counter = 0
+    while counter < quantity
+      Ticket.new('performance_id' => @id).save
+      counter += 1
+    end
   end
 
-  # def sold_tickets()
-  #   sql = "SELECT COUNT (*) FROM tickets WHERE performance_id = $1"
-  #   values = [@id]
-  #   results = SqlRunner.run(sql,values)
-  #   return Ticket.map_items(results)
+  def sold_tickets()
+    sql = "SELECT COUNT (*) FROM tickets WHERE performance_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql,values)
+    return Ticket.map_items(results).count
+  end
+
+  # def calculate_takings()
+  #
   # end
 
   def check_availability()

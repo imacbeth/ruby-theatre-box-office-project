@@ -1,6 +1,0 @@
-require("sinatra")
-require("sinatra/contrib/all")
-require_relative('../models/performance.rb')
-require_relative('../models/ticket.rb')
-require_relative('../models/customer.rb')
-also_reload('../models/*')

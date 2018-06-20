@@ -6,22 +6,18 @@ class Ticket
   def initialize(options)
     @id = options['id'].to_i if options ['id']
     @performance_id = options['performance_id'].to_i
-    @customer_id = options['customer_id'].to_i
-    @price = options['price']
   end
 
   def save()
     sql = "INSERT INTO tickets
     (
-    performance_id,
-    customer_id,
-    price
+    performance_id
     )
     VALUES (
-    $1, $2, $3
+    $1
     )
     RETURNING id"
-    values = [@performance_id, @customer_id, @price]
+    values = [@performance_id]
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
   end
@@ -54,15 +50,13 @@ class Ticket
   def update()
     sql = "UPDATE tickets
     SET
-    (performance_id,
-    customer_id,
-    price
+    (performance_id
     ) =
     (
-      $1, $2, $3
+      $1
     )
     WHERE id = $4"
-    values = [@performance_id, @customer_id, @price, @id]
+    values = [@performance_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -71,13 +65,6 @@ class Ticket
     values = [@performance_id]
     performance_data = SqlRunner.run(sql, values)
     return Performance.map_items(performance_data)
-  end
-
-  def customer()
-    sql = "SELECT * FROM tickets WHERE customer_id = $1"
-    values = [@customer_id]
-    customer_data = SqlRunner.run(sql, values)
-    return Customer.map_items(customer_data)
   end
 
   def self.map_items(ticket_data)
