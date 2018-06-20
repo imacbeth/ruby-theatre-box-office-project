@@ -3,6 +3,7 @@ html {}
 body {
 background-color:	#9F2214;
 background-image: url("/theatre-image.jpg");
+opacity: 0.9;
 }
 
 .heading {
