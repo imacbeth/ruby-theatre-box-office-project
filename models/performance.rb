@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner.rb')
-
+require('date')
+require('time')
 
 class Performance
   attr_reader :id, :show_id, :start_time, :empty_seats
@@ -25,6 +26,7 @@ class Performance
     values = [@show_id, @start_time, @empty_seats]
     result = SqlRunner.run(sql, values)
     @id = result.first['id'].to_i
+
   end
 
   def self.delete_all()
@@ -85,14 +87,14 @@ class Performance
     @empty_seats -= quantity
     update()
   end
-  #
+
   # def sold_tickets()
   #   sql = "SELECT COUNT (*) FROM tickets WHERE performance_id = $1"
   #   values = [@id]
   #   results = SqlRunner.run(sql,values)
   #   return Ticket.map_items(results)
   # end
-  #
+
   def check_availability()
     if @empty_seats > 70
       return "High-availability"
@@ -108,6 +110,10 @@ class Performance
   def self.map_items(performance_data)
     result = performance_data.map { |performance| Performance.new( performance ) }
     return result
+  end
+
+  def get_formatted_start_time()
+     DateTime.parse(@start_time).strftime('%a, %e %b %Y %H:%M')
   end
 
 end

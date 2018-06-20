@@ -12,7 +12,7 @@
   <% @performances.each do |performance| %>
   <tr>
     <td><%= performance.show.name %></td>
-    <td><%= performance.start_time %></td>
+    <td><%= performance.get_formatted_start_time %></td>
     <td><%= performance.empty_seats %></td>
     <td class = "<%= performance.check_availability %>"> <%= performance.check_availability() %></td>
     <td><form  action="performances/<%=performance.id%>/sell" method="post">
