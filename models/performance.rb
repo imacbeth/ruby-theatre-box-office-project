@@ -50,7 +50,7 @@ class Performance
     return performance
   end
 
-  def delete(id)
+  def delete()
     sql = "DELETE FROM performances WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, values)

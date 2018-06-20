@@ -15,12 +15,18 @@
 <th>Time and date</th>
 <th>Number of seats left</th>
 <th> Availability level</th>
+<th> Show takings </th>
 <tr><% for performance in @performances %></tr>
 <tr>
 <td><%= performance.start_time %></td>
 <td><%= performance.empty_seats %></td>
 <td><%= performance.check_availability() %></td>
+<% end  %>
+<tr>
+  <td> Total takings: </td>
+  <td><%= @show.total_show_takings %></td>
+</tr>
 
 </tr>
-<% end  %>
+
 </table>

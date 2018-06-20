@@ -45,7 +45,7 @@ end
 #DELETE
 post '/performances/:id/delete' do
   performance = Performance.find(params[:id])
-  performance.delete
+  performance.delete()
   redirect to '/performances'
 end
 

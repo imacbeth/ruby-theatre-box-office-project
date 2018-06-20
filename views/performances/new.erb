@@ -14,7 +14,10 @@
     <label for="start_time">Please enter a date and start time:</label>
       <input type="datetime-local" name="start_time" id="start_time"/>
 
-    <label for="empty_seats">Please enter the maximum capacity for the venue</label>
+      <label for="price">Please enter a ticket price:</label>
+      <input type="number" name="price" min="10" max="50">
+
+    <label for="empty_seats">Please enter the maximum venue capacity:</label>
       <input type="number" name="empty_seats">
 
     <input type="submit" value="Create new performance">

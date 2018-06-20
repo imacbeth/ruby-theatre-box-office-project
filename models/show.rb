@@ -66,6 +66,11 @@ class Show
   end
 
   def total_show_takings()
-    return performances() * @performances.price
+    performances_of_show = performances()
+    total = 0
+    performances_of_show.each do |performance|
+    total += (performance.price * performance.tickets)
+    end
+    return total
   end
 end
