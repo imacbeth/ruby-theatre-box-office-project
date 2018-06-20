@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./performance.rb')
 
 class Show
 
@@ -64,4 +65,7 @@ class Show
     return performances.map { |performance_hash| Performance.new(performance_hash) }
   end
 
+  def total_show_takings()
+    return performances() * @performances.price
+  end
 end

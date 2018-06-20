@@ -101,16 +101,16 @@ class Performance
     end
   end
 
-  def sold_tickets()
-    sql = "SELECT COUNT (*) FROM tickets WHERE performance_id = $1"
-    values = [@id]
-    results = SqlRunner.run(sql,values)
-    return Ticket.map_items(results).count
-  end
-
-  # def calculate_takings()
-  #
+  # def sold_tickets()
+  #   sql = "SELECT COUNT (*) FROM tickets WHERE performance_id = $1"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql,values)
+  #   return Ticket.map_items(results)
   # end
+
+  def calculate_takings()
+    return tickets() * @price
+  end
 
   def check_availability()
     if @empty_seats > 70

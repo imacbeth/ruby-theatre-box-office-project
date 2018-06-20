@@ -3,6 +3,7 @@ require_relative('../models/show.rb')
 require_relative('../models/performance.rb')
 require_relative('../models/ticket.rb')
 
+Ticket.delete_all()
 Show.delete_all()
 Performance.delete_all()
 
@@ -74,75 +75,12 @@ performance3.save()
 performance4.save()
 performance5.save()
 
-ticket1 = Ticket.new({
-  "performance_id" => performance1.id,
-})
-ticket2 = Ticket.new({
-  "performance_id" => performance2.id
-})
-ticket3 = Ticket.new({
-  "performance_id" => performance3.id
-})
-ticket4 = Ticket.new({
-  "performance_id" => performance4.id
-})
-ticket5 = Ticket.new({
-  "performance_id" => performance5.id
-})
-ticket1.save()
-ticket2.save()
-ticket3.save()
-ticket4.save()
-ticket5.save()
+performance1.sell_tickets(2)
+performance2.sell_tickets(1)
+performance3.sell_tickets(5)
+performance4.sell_tickets(6)
+performance5.sell_tickets(2)
 
-ticket6 = Ticket.new({
-  "performance_id" => performance1.id
-})
-ticket6.save()
-ticket7 = Ticket.new({
-  "performance_id" => performance2.id
-})
-ticket7.save()
-
-ticket8 = Ticket.new({
-  "performance_id" => performance3.id
-})
-ticket8.save()
-
-ticket9 = Ticket.new({
-  "performance_id" => performance4.id
-})
-ticket9.save()
-
-ticket10 = Ticket.new({
-  "performance_id" => performance5.id
-})
-ticket10.save()
-
-
-ticket11 = Ticket.new({
-  "performance_id" => performance1.id
-})
-ticket11.save()
-ticket12 = Ticket.new({
-  "performance_id" => performance2.id
-})
-ticket12.save()
-
-ticket13 = Ticket.new({
-  "performance_id" => performance3.id
-})
-ticket13.save()
-
-ticket14 = Ticket.new({
-  "performance_id" => performance4.id
-})
-ticket14.save()
-
-ticket15 = Ticket.new({
-  "performance_id" => performance5.id
-})
-ticket15.save()
 
 
 
