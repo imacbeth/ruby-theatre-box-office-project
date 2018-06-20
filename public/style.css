@@ -1,8 +1,31 @@
-html { }
+html {}
 
-header {
+body {
+background-color:	#9F2214;
+background-image: url("/theatre-image.jpg");
+}
+
+.heading {
   text-align: center;
+  color: white;
   font-family: 'Lora', serif;
+}
+.container {
+  background-color: #FFFEE7B3;
+  padding: 20px 50px;
+  align-content: center;
+  justify-content: left;
+  margin: 70px;
+}
+
+.nav {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.form-wrapper {
+
+
 }
 ul {
   list-style-type: none;
@@ -29,6 +52,7 @@ td {
 table {
   align-content: left;
   display: flex;
+  justify-content: space-around;
 }
 
 

@@ -1,26 +1,29 @@
-<h2>Add a new performance</h2>
+<div class="container">
+  <h2>Add a new performance</h2>
 
-<form action="/performances" method="post">
+  <form action="/performances" method="post">
 
-  <div class="form-wrapper">
+    <div class="form-wrapper">
 
-    <label for="show-selection">Select a show:</label>
-      <select name="show_id" id="show-selection">
-        <% @shows.each do |show| %>
-          <option value=<%= show.id %>><%= show.name %></option>
-        <% end %>
-      </select>
+      <label for="show-selection">Select a show:</label>
+        <select name="show_id" id="show-selection">
+          <% @shows.each do |show| %>
+            <option value=<%= show.id %>><%= show.name %></option>
+          <% end %>
+        </select>
 
-    <label for="start_time">Please enter a date and start time:</label>
-      <input type="datetime-local" name="start_time" id="start_time"/>
+      <label for="start_time">Please enter a date and start time:</label>
+        <input type="datetime-local" name="start_time" id="start_time"/>
 
-      <label for="price">Please enter a ticket price:</label>
-      <input type="number" name="price" min="10" max="50">
+        <label for="price">Please enter a ticket price:</label>
+        <input type="number" name="price" min="10" max="50">
 
-    <label for="empty_seats">Please enter the maximum venue capacity:</label>
-      <input type="number" name="empty_seats">
+      <label for="empty_seats">Please enter the maximum venue capacity:</label>
+        <input type="number" name="empty_seats">
 
-    <input type="submit" value="Create new performance">
+      <input type="submit" value="Create new performance">
 
-  </div>
-</form>
+    </div>
+  </form>
+
+</div>

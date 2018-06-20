@@ -1,31 +1,35 @@
-<h2>Performances</h2>
+<div class="container">
+  <h2>Performances</h2>
 
-<table>
-  <tr>
-    <th>Show</th>
-    <th>Start time</th>
-    <th>Empty Seats</th>
-    <th>Tickets sold</th>
-    <th>Takings</th>
-    <th>Availability level</th>
-    <th>Sell tickets</th>
-    <th>More details</th>
-  </tr>
-  <% @performances.each do |performance| %>
-  <tr>
-    <td><%= performance.show.name %></td>
-    <td><%= performance.get_formatted_start_time %></td>
-    <td><%= performance.empty_seats %></td>
-    <td><%= performance.tickets %></td>
-    <td><%= performance.calculate_takings %></td>
-    <td class = "<%= performance.check_availability %>"> <%= performance.check_availability() %></td>
-    <td><form  action="performances/<%=performance.id%>/sell" method="post">
-    <label for="quantity-field"></label>
-    <input type="number" name="quantity" min = "0" max = "20"><input type="submit" value="Update">
-    </form> </td>
-    <td><a href="/performances/<%= performance.id %>">More options</a></td>
-  </tr>
+  <table>
+    <tr>
+      <th>Show</th>
+      <th>Start time</th>
+      <th>Empty Seats</th>
+      <th>Tickets sold</th>
+      <th>Takings</th>
+      <th>Availability level</th>
+      <th>Sell tickets</th>
+      <th>More details</th>
+    </tr>
+    <% @performances.each do |performance| %>
+    <tr>
+      <td><%= performance.show.name %></td>
+      <td><%= performance.get_formatted_start_time %></td>
+      <td><%= performance.empty_seats %></td>
+      <td><%= performance.tickets %></td>
+      <td><%= performance.calculate_takings %></td>
+      <td class = "<%= performance.check_availability %>"> <%= performance.check_availability() %></td>
+      <td><form  action="performances/<%=performance.id%>/sell" method="post">
+      <label for="quantity-field"></label>
+      <input type="number" name="quantity" min = "0" max = "20"><input type="submit" value="Update">
+      </form> </td>
+      <td><a href="/performances/<%= performance.id %>">More options</a></td>
+    </tr>
 
-  <% end %>
+    <% end %>
 
-</table>
+  </table>
+
+
+</div>
