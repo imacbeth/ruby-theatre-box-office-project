@@ -20,7 +20,7 @@
   <tr>
   <td><%= performance.get_formatted_start_time %></td>
   <td><%= performance.empty_seats %></td>
-  <td><%= performance.check_availability() %></td>
+  <td class = "<%= performance.check_availability %>"><%= performance.check_availability %></td>
   <% end  %>
   <tr>
     <td> <b>Total takings: </b></td>

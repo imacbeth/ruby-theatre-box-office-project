@@ -18,6 +18,11 @@ margin: 0 auto;
   z-index: -1;
 }
 
+.button {
+  color: #d70d1f;
+  background: #FFFEE7;
+  border-radius: 4px;
+}
 
 .heading {
   text-align: center;
