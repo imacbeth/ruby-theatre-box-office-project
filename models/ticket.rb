@@ -60,11 +60,12 @@ class Ticket
     SqlRunner.run(sql, values)
   end
 
-  def performance()
-    sql = "SELECT * FROM tickets WHERE performance_id = $1"
+
+  def performance_time()
+    sql = "SELECT * FROM performances WHERE id = $1"
     values = [@performance_id]
-    performance_data = SqlRunner.run(sql, values)
-    return Performance.map_items(performance_data)
+    results = SqlRunner.run(sql, values)
+    return Performance.new(results.first).get_formatted_start_time
   end
 
   def self.map_items(ticket_data)

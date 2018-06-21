@@ -133,4 +133,11 @@ class Performance
      DateTime.parse(@start_time).strftime('%a, %e %b %Y %H:%M')
   end
 
+  # def refund_ticket(ticket)
+  #   @empty_seats += 1
+  #   update()
+  #   ticket.delete
+  #
+  # end
+
 end
