@@ -1,7 +1,7 @@
 html {}
 
 body {
-background-color:	#bbbbb3;
+background-color: #FFFEE74D;
 }
 .background {
   background-image: url("/theatre-image.jpg");
@@ -21,7 +21,6 @@ background-color:	#bbbbb3;
   font-family: 'Lora', serif;
 }
 .container {
-  background-color: #FFFEE766;
   padding: 15px 50px 25px;
   align-content: center;
   justify-content: space-around;
@@ -33,7 +32,6 @@ background-color:	#bbbbb3;
 .nav {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
-  margin-bottom: 20
 }
 
 .form-wrapper {
@@ -60,7 +58,7 @@ th {
   text-align: left;
 }
 td {
-  padding: 1vh;
+  padding: 2vh;
   text-align: left;
 }
 
