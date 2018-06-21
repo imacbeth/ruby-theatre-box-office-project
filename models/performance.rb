@@ -86,10 +86,6 @@ class Performance
     return Ticket.map_items(results).count
   end
 
-  # def sell_tickets(quantity)
-  #   @empty_seats -= quantity
-  #   update()
-  # end
 
   def sell_tickets(quantity)
     @empty_seats -= quantity
@@ -101,12 +97,6 @@ class Performance
     end
   end
 
-  # def sold_tickets()
-  #   sql = "SELECT COUNT (*) FROM tickets WHERE performance_id = $1"
-  #   values = [@id]
-  #   results = SqlRunner.run(sql,values)
-  #   return Ticket.map_items(results)
-  # end
 
   def calculate_takings()
     return tickets() * @price
@@ -133,11 +123,5 @@ class Performance
      DateTime.parse(@start_time).strftime('%a, %e %b %Y %H:%M')
   end
 
-  # def refund_ticket(ticket)
-  #   @empty_seats += 1
-  #   update()
-  #   ticket.delete
-  #
-  # end
 
 end
