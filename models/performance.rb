@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner.rb')
 require('date')
 require('time')
+require_relative('../models/ticket.rb')
 
 class Performance
   attr_reader :id, :show_id, :start_time, :empty_seats, :price

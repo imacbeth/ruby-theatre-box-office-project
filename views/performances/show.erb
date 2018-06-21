@@ -11,7 +11,7 @@
       <td><h4> <%= @performance.show.name %></h4></td>
       <td><%= @performance.start_time %></td>
       <td><%= @performance.empty_seats %></td>
-      <td><%= @performance.check_availability %></td>
+      <td class= "<%= @performance.check_availability %>"><%= @performance.check_availability %></td>
     </tr>
     <tr>
       <td><a href="/performances/<%= @performance.id %>/edit">Edit performance</a></td>
