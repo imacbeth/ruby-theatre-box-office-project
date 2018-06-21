@@ -16,8 +16,8 @@
     <tr>
       <td><a href="/performances/<%= @performance.id %>/edit">Edit performance</a></td>
       <td>
-        <form class="button" method="post" action="/performances/<%= @performance.id %>/delete">
-          <input type="submit" value="Cancel Performance"/>
+        <form  method="post" action="/performances/<%= @performance.id %>/delete">
+          <input class="button" type="submit" value="Cancel Performance"/>
         </form>
       </td>
     </tr>

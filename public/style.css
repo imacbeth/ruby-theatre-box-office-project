@@ -4,13 +4,14 @@ html {
 }
 
 body {
-background-color: #f6f6e9;
+background-color: #faf9f9;
 margin: 0 auto;
 }
 
 h1 {
   font-family: 'Lora', serif;
   font-weight: bold;
+  font-size: 7vh;
 }
 
 .background {
@@ -39,7 +40,6 @@ h1 {
 .heading {
   text-align: center;
   color: black;
-
   margin: 0 auto;
   width: 100%;
   border: 0;
@@ -51,7 +51,6 @@ h1 {
   justify-content: space-around;
   margin: 0 auto;
   display: table;
-
 }
 
 .nav {
