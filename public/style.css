@@ -22,17 +22,18 @@ background-color:	#bbbbb3;
 }
 .container {
   background-color: #FFFEE766;
-  padding: 20px 50px;
+  padding: 15px 50px 25px;
   align-content: center;
   justify-content: space-around;
-  margin: 70px;
-  display: inline-block;
+  margin: 0 auto;
+  display: table;
 
 }
 
 .nav {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
+  margin-bottom: 20
 }
 
 .form-wrapper {
