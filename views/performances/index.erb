@@ -22,7 +22,7 @@
       <td class = "<%= performance.check_availability %>"> <%= performance.check_availability() %></td>
       <td><form  action="performances/<%=performance.id%>/sell" method="post">
       <label for="quantity-field"></label>
-      <input type="number" name="quantity" min = "0" max = "20"><input type="submit" value="Update">
+      <input type="number" name="quantity" min = "0" max = "20"><input type="submit" value="Update" class="button">
       </form> </td>
       <td><a href="/performances/<%= performance.id %>">More options</a></td>
     </tr>
