@@ -2,7 +2,10 @@ html {}
 
 body {
 background-color: #FFFEE74D;
+margin: 0 auto;
 }
+
+
 .background {
   background-image: url("/theatre-image.jpg");
   display: block;
@@ -15,10 +18,15 @@ background-color: #FFFEE74D;
   z-index: -1;
 }
 
+
 .heading {
   text-align: center;
   color: black;
   font-family: 'Lora', serif;
+  margin: 0 auto;
+  width: 100%;
+  border: 0;
+  padding: 0;
 }
 .container {
   padding: 15px 50px 25px;
@@ -32,6 +40,7 @@ background-color: #FFFEE74D;
 .nav {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
+
 }
 
 .form-wrapper {
@@ -68,6 +77,9 @@ table {
   justify-content: space-around;
 }
 
+h2 {
+
+}
 
 .Sold-out { background-color: #2dc937;
 }

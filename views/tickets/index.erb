@@ -5,10 +5,19 @@
         <th>Show</th>
         <th>Performance</th>
         <th>Price</th>
-
       </tr>
-
-
+      <%= @tickets.each do |ticket| %>
+      <tr>
+        <td>
+          <%= ticket.performance.show %>
+        </td>
+        <td>
+          <%= ticket.performance %>
+        </td>
+        <td>
+          <%= ticket.performance.price %>
+        </td>
+      </tr>
     </table>
 
 </div>
